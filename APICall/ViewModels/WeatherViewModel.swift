@@ -39,6 +39,8 @@ class WeatherViewModel: ObservableObject {
         // Build the URL
         let baseURL = "put your api here -_-" // I removed my key for security reasons
         
+        // changes to test github local repo 
+        
         guard
             let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: "\(baseURL)?q=\(encodedCity)&units=metric&appid=\(apiKey)")
