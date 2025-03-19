@@ -15,7 +15,7 @@ class WeatherViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     
     // Replace with your actual OpenWeather API key
-    private let apiKey = "5a68d7032ed76ee48d749e12dd858ad0"
+    private let apiKey = "put your api here"  // removed my apikey for security reasons
     
     /// A computed property so ContentView can display just the temp in °C
     var currentTemp: Double? {
@@ -37,9 +37,8 @@ class WeatherViewModel: ObservableObject {
         errorMessage = nil
         
         // Build the URL
-        let baseURL = "put your api here -_-" // I removed my key for security reasons
+        let baseURL = "https://api.openweathermap.org/data/2.5/weather"
         
-        // changes to test github local repo 
         
         guard
             let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
