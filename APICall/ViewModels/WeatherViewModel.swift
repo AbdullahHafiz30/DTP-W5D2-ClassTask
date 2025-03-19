@@ -22,6 +22,14 @@ class WeatherViewModel: ObservableObject {
         currentWeather?.main.temp
     }
     
+    var cityName: String? {
+        currentWeather?.name
+    }
+    
+    var feelsLike: Double? {
+        currentWeather?.main.feels_like
+    }
+    
     /// Fetches the current weather from the "api.openweathermap.org/data/2.5/weather"
     /// endpoint, given a city name (in °C).
     func fetchWeatherForCity(_ city: String) {
@@ -29,7 +37,7 @@ class WeatherViewModel: ObservableObject {
         errorMessage = nil
         
         // Build the URL
-        let baseURL = "https://api.openweathermap.org/data/2.5/weather"
+        let baseURL = "put your api here -_-" // I removed my key for security reasons
         
         guard
             let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),

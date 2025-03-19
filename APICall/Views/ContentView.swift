@@ -42,9 +42,21 @@ struct ContentView: View {
                 }
                 // Display the temperature if we have it
                 else if let temp = viewModel.currentTemp {
+                    // Display the city name (defaulting to "Unknown City" if nil)
+                    Text(viewModel.cityName ?? "Unknown City")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    // Display the current temperature
                     Text("Current temperature: \(String(format: "%.1f", temp)) °C")
                         .font(.headline)
                         .foregroundColor(.white)
+                    
+                    // Display the "feels like" temperature if available
+                    if let feelsLike = viewModel.feelsLike {
+                        Text("Feels like: \(String(format: "%.1f", feelsLike)) °C")
+                            .font(.subheadline)
+                        .foregroundColor(.white)}
                 }
                 // Fallback if no data loaded yet
                 else {
